@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Prata&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: Outfit;
+}
+
+.prata-regular{
+    font-family: "Prata", serif;
+}
+
+select,input,textarea{
+    border: 1px solid rgb(190, 190, 255);
+    outline-color: rgb(190, 190, 255) ;
+    border-radius: 4px;
+}
+
+.active {
+  background: linear-gradient(135deg, #D8B4FE 0%, #A5B4FC 100%);
+  border-color: #C4B5FD;
+  padding: 7px;
+  border-radius: 6px;
+  transition: 
+    border-color 0.35s ease,
+    padding 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+  color: #1F2937; /* Dark gray text for contrast */
+  font-weight: 600;
+}
