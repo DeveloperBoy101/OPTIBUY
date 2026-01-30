@@ -9,6 +9,7 @@
     "start": "node server.js",
     "dev" : "nodemon server.js",
     "build" : "npm install && npm install --prefix ../Frontened && npm run build --prefix ../Frontened"
+    "adminbuild" : "npm install && npm install --prefix ../Admin && npm run build --prefix ../Admin"
   },
   "author": "",
   "license": "ISC",
