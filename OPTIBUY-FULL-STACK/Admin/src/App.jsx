@@ -6,7 +6,7 @@ import Orders from "./pages/Orders";
 import { ToastContainer } from "react-toastify";
 import Navbar from "./components/Navbar";
 import "react-toastify/dist/ReactToastify.css";
-import Login from "./components/login";
+import Login from "./components/Login";
 import Sidebar from "./components/Sidebar";
 
 export const backenedUrl = import.meta.env.VITE_BACKENED_URL;
