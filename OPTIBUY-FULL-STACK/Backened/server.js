@@ -21,7 +21,7 @@ connectCloudinary();
 //middlewares :
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname,'../Frontened/dist')))
+app.use(express.static(path.join(__dirname,'../Admin/dist')))
 
 //api endpoints :
 app.use("/api/user", userRouter);
@@ -41,7 +41,7 @@ app.use((req, res) => {
   }
   
   // For all non-API routes, serve the React app
-  res.sendFile(path.join(__dirname, '../Frontened/dist/index.html'));
+  res.sendFile(path.join(__dirname, '../Admin/dist/index.html'));
 });
 
 
