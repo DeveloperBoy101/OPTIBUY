@@ -1,7 +1,7 @@
 import userModel from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import validator from "validator";
+// import validator from "validator";
 
 //Creating token for the registered user : 
 const createToken = (id) => {
@@ -55,12 +55,12 @@ const registerUser = async (req, res) => {
             })
         }
 
-        if(!validator.isEmail(email)){
-            return res.status(400).json({
-                success :false,
-                message : "Please enter valid email"
-            })
-        }
+        // if(!validator.isEmail(email)){
+        //     return res.status(400).json({
+        //         success :false,
+        //         message : "Please enter valid email"
+        //     })
+        // }
 
         if(password.length < 8){
             return res.status(400).json({
