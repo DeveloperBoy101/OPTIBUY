@@ -7,6 +7,7 @@ import userRouter from "./routes/userRoute.js";
 import productRouter from "./routes/productRoute.js"
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+import path from "path";
 
 //App config:
 const app = express();
@@ -17,6 +18,7 @@ connectCloudinary();
 //middlewares :
 app.use(express.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname,'../Frontened/dist')))
 
 //api endpoints :
 app.use("/api/user", userRouter);
@@ -24,9 +26,21 @@ app.use("/api/product", productRouter);
 app.use("/api/cart",cartRouter);
 app.use("/api/order",orderRouter);
 //general route :
-app.get("/", (req, res) => {
-  res.send(`API is working at localhost = ${port}`);
+// app.get("/", (req, res) => {
+//   res.send(`API is working at localhost = ${port}`);
+// });
+app.use((req, res) => {
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({ 
+      success: false,
+      message: 'API endpoint not found' 
+    });
+  }
+  
+  // For all non-API routes, serve the React app
+  res.sendFile(path.join(__dirname, '../Frontened/dist/index.html'));
 });
+
 
 //server listening port :
 app.listen(port, () => {
