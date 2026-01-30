@@ -8,6 +8,9 @@ import productRouter from "./routes/productRoute.js"
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+export const __dirname = path.dirname(__filename);
 
 //App config:
 const app = express();
